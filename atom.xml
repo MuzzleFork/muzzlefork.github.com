@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://MuzzleFork.github.com/atom.xml" rel="self"/>
   <link href="http://MuzzleFork.github.com/"/>
-  <updated>2012-11-02T20:46:41+11:00</updated>
+  <updated>2012-11-02T21:02:37+11:00</updated>
   <id>http://MuzzleFork.github.com/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -12,5 +12,14 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[something new]]></title>
+    <link href="http://MuzzleFork.github.com/blog/2012/11/02/something-new/"/>
+    <updated>2012-11-02T21:02:00+11:00</updated>
+    <id>http://MuzzleFork.github.com/blog/2012/11/02/something-new</id>
+    <content type="html"><![CDATA[<p>this is new</p>
+]]></content>
+  </entry>
   
 </feed>
