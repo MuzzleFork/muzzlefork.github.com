@@ -9,7 +9,7 @@
   <meta name="author" content="MuzzleFork">
 
   
-  <meta name="description" content="I&#8217;ve recently upgraded to MAMP Pro and I like how I can easily add virtual hosts in its UI - something I had previously done in code in the &hellip;">
+  <meta name="description" content="Ever wondered why performance of MySQL on OS X was so much worse than a Linux or windows counterpart - especially when doing DROP/CREATE statements ( &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -64,6 +64,49 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/01/mysql-performance-on-os-x/">MySQL Performance on OS X</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-01-25T22:50:00+11:00" pubdate data-updated="true">2012-01-25</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Ever wondered why performance of MySQL on OS X was so much worse than a Linux or windows counterpart - especially when doing DROP/CREATE statements (ie in the setup of unit tests etc)? It turns out Mac OS has a safer file creation function than is available on other operating systems and the use of that slows down performance of file operations in MySQL.</p>
+
+<p>You can fix this quickly by adding the following to your <strong>my.cnf</strong> file in the<strong> [server]</strong> block. It&#8217;s probably best not to do this in production, but who actually uses OS X as a production web server anyway?</p>
+
+<pre>skip-sync-frm=OFF</pre>
+
+
+<p>Source: <a href="http://bugs.mysql.com/bug.php?id=56550">The original MySQL bug report</a> (although it&#8217;s not really a bug).</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -245,6 +288,10 @@
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/01/mysql-performance-on-os-x/">MySQL Performance on OS X</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2012/01/problems-with-the-default-virtual-host-on-mamp-pro-2-dot-0-5/">Problems with the default virtual host on MAMP Pro 2.0.5</a>
