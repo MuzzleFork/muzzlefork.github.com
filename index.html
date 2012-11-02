@@ -9,7 +9,7 @@
   <meta name="author" content="MuzzleFork">
 
   
-  <meta name="description" content="Do you work on old, shitty code? Does it stink? Each time you have to work on that same file that drives you nuts, does it make you question your &hellip;">
+  <meta name="description" content="I&#8217;ve recently upgraded to MAMP Pro and I like how I can easily add virtual hosts in its UI - something I had previously done in code in the &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -64,6 +64,47 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/01/problems-with-the-default-virtual-host-on-mamp-pro-2-dot-0-5/">Problems With the Default Virtual Host on MAMP Pro 2.0.5</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-01-23T00:00:00+11:00" pubdate data-updated="true">2012-01-23</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I&#8217;ve recently upgraded to MAMP Pro and I like how I can easily add virtual hosts in its UI - something I had previously done in code in the free version and on older machines running windows, Linux etc. I ran into a strange problem with MAMP though.</p>
+
+<p>In the project I&#8217;m working on, I expect to have the default behaviour for unmatched host names go to the first virtual host (a default behaviour of the apache virtual host system) and to have some custom virtual host configurations for my Zend Framework app to work (namely &#8220;SetEnv APPLICATION_ENV development&#8221;). After pulling my hair out for a while, I found out why my environment variables weren&#8217;t being sent through to apache and PHP when I was getting the default virtual host: MAMP Pro adds an extra first virtual host above your collection of virtual hosts (trying to be helpful, I assume) which doesn&#8217;t have the custom virtual host directory settings in it and as such, requests will fail.</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/01/problems-with-the-default-virtual-host-on-mamp-pro-2-dot-0-5/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -204,6 +245,10 @@
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/01/problems-with-the-default-virtual-host-on-mamp-pro-2-dot-0-5/">Problems with the default virtual host on MAMP Pro 2.0.5</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2011/07/stop-working-on-shit-code/">Stop working on shit code</a>
