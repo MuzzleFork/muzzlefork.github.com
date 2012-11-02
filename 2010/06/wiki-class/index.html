@@ -5,11 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>MySQL Performance on OS X - Lucas' Thoughts</title>
+  <title>Wiki Class - Lucas' Thoughts</title>
   <meta name="author" content="MuzzleFork">
 
   
-  <meta name="description" content="Ever wondered why performance of MySQL on OS X was so much worse than a Linux or windows counterpart - especially when doing DROP/CREATE statements ( &hellip;">
+  <meta name="description" content="Ages ago, I wrote a simple class to enable some scripts to update our wiki. A friend asked for a copy, so here it is: &lt;?php
+$wiki = new wiki('http &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://muzzlefork.github.com/blog/2012/01/mysql-performance-on-os-x/">
+  <link rel="canonical" href="http://muzzlefork.github.com/2010/06/wiki-class/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -79,7 +80,7 @@
   
   <header>
     
-      <h1 class="entry-title">MySQL Performance on OS X</h1>
+      <h1 class="entry-title">Wiki Class</h1>
     
     
       <p class="meta">
@@ -95,21 +96,23 @@
   
 
 
-<time datetime="2012-01-25T22:50:00+11:00" pubdate data-updated="true">2012-01-25</time>
+<time datetime="2010-06-08T21:44:00+10:00" pubdate data-updated="true">2010-06-08</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>Ever wondered why performance of MySQL on OS X was so much worse than a Linux or windows counterpart - especially when doing DROP/CREATE statements (ie in the setup of unit tests etc)? It turns out Mac OS has a safer file creation function than is available on other operating systems and the use of that slows down performance of file operations in MySQL.</p>
+<div class="entry-content"><p>Ages ago, I wrote a simple class to enable some scripts to update our wiki. A friend asked for a copy, so here it is:<!--more--></p>
 
-<p>You can fix this quickly by adding the following to your <strong>my.cnf</strong> file in the<strong> [server]</strong> block. It&#8217;s probably best not to do this in production, but who actually uses OS X as a production web server anyway?</p>
+<div><script src='https://gist.github.com/1598093.js?file='></script>
+<noscript><pre><code>&lt;?php
+$wiki = new wiki('http://mywikiurl.com/api.php');
+$wiki-&gt;edit('pageName', 'contents');
+?&gt;</code></pre></noscript></div>
 
-<pre>skip-sync-frm=OFF</pre>
 
 
-<p>Source: <a href="http://bugs.mysql.com/bug.php?id=56550">The original MySQL bug report</a> (although it&#8217;s not really a bug).</p>
 </div>
 
 
@@ -132,7 +135,7 @@
   
 
 
-<time datetime="2012-01-25T22:50:00+11:00" pubdate data-updated="true">2012-01-25</time>
+<time datetime="2010-06-08T21:44:00+10:00" pubdate data-updated="true">2010-06-08</time>
       
 
 
@@ -140,7 +143,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://muzzlefork.github.com/blog/2012/01/mysql-performance-on-os-x/" data-via="MuzzleFork" data-counturl="http://muzzlefork.github.com/blog/2012/01/mysql-performance-on-os-x/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://muzzlefork.github.com/2010/06/wiki-class/" data-via="MuzzleFork" data-counturl="http://muzzlefork.github.com/2010/06/wiki-class/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -153,8 +156,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2012/01/problems-with-the-default-virtual-host-on-mamp-pro-2-0-5/" title="Previous Post: Problems with the default virtual host on MAMP Pro 2.0.5">&laquo; Problems with the default virtual host on MAMP Pro 2.0.5</a>
       
+        <a class="basic-alignment right" href="/2011/07/os-x-lion-mamp-2-0-1-memcache-and-php-5-2-17/" title="Next Post: OS X Lion + MAMP 2.0.1 + Memcache and PHP 5.2.17">OS X Lion + MAMP 2.0.1 + Memcache and PHP 5.2.17 &raquo;</a>
       
     </p>
   </footer>
@@ -175,23 +178,23 @@
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2012/01/mysql-performance-on-os-x/">MySQL Performance on OS X</a>
+        <a href="/2012/01/mysql-performance-on-os-x/">MySQL Performance on OS X</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2012/01/problems-with-the-default-virtual-host-on-mamp-pro-2-0-5/">Problems with the default virtual host on MAMP Pro 2.0.5</a>
+        <a href="/2012/01/problems-with-the-default-virtual-host-on-mamp-pro-2-0-5/">Problems with the default virtual host on MAMP Pro 2.0.5</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2011/07/stop-working-on-shit-code/">Stop working on shit code</a>
+        <a href="/2011/07/stop-working-on-shit-code/">Stop working on shit code</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2011/07/os-x-lion-mamp-2-0-1-memcache-and-php-5-2-17/">OS X Lion + MAMP 2.0.1 + Memcache and PHP 5.2.17</a>
+        <a href="/2011/07/os-x-lion-mamp-2-0-1-memcache-and-php-5-2-17/">OS X Lion + MAMP 2.0.1 + Memcache and PHP 5.2.17</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2010/06/wiki-class/">Wiki Class</a>
+        <a href="/2010/06/wiki-class/">Wiki Class</a>
       </li>
     
   </ul>
@@ -275,8 +278,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://muzzlefork.github.com/blog/2012/01/mysql-performance-on-os-x/';
-        var disqus_url = 'http://muzzlefork.github.com/blog/2012/01/mysql-performance-on-os-x/';
+        var disqus_identifier = 'http://muzzlefork.github.com/2010/06/wiki-class/';
+        var disqus_url = 'http://muzzlefork.github.com/2010/06/wiki-class/';
         var disqus_script = 'embed.js';
       
     (function () {

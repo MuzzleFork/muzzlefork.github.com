@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Stop working on shit code - Lucas' Thoughts</title>
+  <title>OS X Lion + MAMP 2.0.1 + Memcache and PHP 5.2.17 - Lucas' Thoughts</title>
   <meta name="author" content="MuzzleFork">
 
   
-  <meta name="description" content="Do you work on old, shitty code? Does it stink? Each time you have to work on that same file that drives you nuts, does it make you question your &hellip;">
+  <meta name="description" content="After a fresh install of Lion, getting up to speed with my normal MAMP dev setup + memcached wasn&#8217;t as easy as on Snow Leopard. I ended up &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://muzzlefork.github.com/blog/2011/07/stop-working-on-shit-code/">
+  <link rel="canonical" href="http://muzzlefork.github.com/2011/07/os-x-lion-mamp-2-0-1-memcache-and-php-5-2-17/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -79,7 +79,7 @@
   
   <header>
     
-      <h1 class="entry-title">Stop Working on Shit Code</h1>
+      <h1 class="entry-title">OS X Lion + MAMP 2.0.1 + Memcache and PHP 5.2.17</h1>
     
     
       <p class="meta">
@@ -95,31 +95,57 @@
   
 
 
-<time datetime="2011-07-26T00:00:00+10:00" pubdate data-updated="true">2011-07-26</time>
+<time datetime="2011-07-25T00:00:00+10:00" pubdate data-updated="true">2011-07-25</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>Do you work on old, shitty code? Does it stink? Each time you have to work on that same file that drives you nuts, does it make you question your sanity?</p>
-
-<p>In my day job, if there&#8217;s something that&#8217;ll bring tears to a developer&#8217;s eyes, it&#8217;s being given a story to work on that involves touching a 6~7 year old file called <code>sales.php</code>. This file is a monstrous 7000+ lines long and is a gigantic state machine that is confusing and highly prone to malfunction. It also loosely forms the &#8220;C&#8221; and the &#8220;V&#8221; of a fairly broken MVC structure. To make matters worse, over the years, there have been ~10 different developers &#8216;work&#8217; on it and it&#8217;s a delicate debacle of different coding styles, motivations and business desires.<!--more--></p>
-
-<p>Every developer who has ever had the misfortune of working with this file (and the rest of the broken MVC) has always cried out that the whole system needs rewriting (and rightly so), but it&#8217;s hard to sell that to the business when it&#8217;ll a) take ages, b) probably take longer than that, c) in the meantime, they get no new features and d) will, once completed, probably be just as bad as the old one (and hey presto, it&#8217;s now outdated too). I was talking to a colleague about this the other week and came to a realisation about it.</p>
-
-<p><strong>Stop working on shit code! We&#8217;re better than that.</strong> After working with this software for 3 years, I can&#8217;t say that I&#8217;m proud of the work I&#8217;ve done there (my colleague was 6 years - he couldn&#8217;t either) - I&#8217;ve just continued the legacy of bad code because the barrier to change was too high. If you can&#8217;t be proud of your work, then when you look back on it later, you&#8217;ll realise you&#8217;ve wasted your time (and your company&#8217;s). As of that day, my new work ethos is centred around pride.</p>
+<div class="entry-content"><p>After a fresh install of Lion, getting up to speed with my normal MAMP dev setup + memcached wasn&#8217;t as easy as on Snow Leopard. I ended up seeking inspiration from the following articles:</p>
 
 <ul>
-    <li>As I commit each changeset, I want to be able to say I&#8217;m proud of the code I&#8217;m committing.</li>
-    <li>I respect my colleagues as professionals and friends. When they peer review my work, I don&#8217;t want them to think &#8220;Wow, what a lame way to do that&#8221; or &#8220;wouldn&#8217;t it be great if he did &#8216;xyz&#8217;?&#8221;. If they do think I&#8217;ve done something poorly, I <strong>want</strong> them to call me out on it. If they know some smarter way to do it, teach me. If I&#8217;ve left a debugging line in or a dodgy comment, make me fix it.</li>
-    <li>Conversely, when I peer review my colleague&#8217;s work, I want to know that what I&#8217;m seeing is their best solution to the problem and that they are proud of the work they&#8217;re showing me. I will tell them if I think it stinks and explain why.</li>
+    <li><a href="http://mxcl.github.com/homebrew/">Homebrew</a> - for installing memcached</li>
+    <li><a href="http://www.lullabot.com/articles/setup-memcached-mamp-sandbox-environment">Lullabot&#8217;s article about memcached with mamp</a></li>
+    <li><a href="http://forum.mamp.info/viewtopic.php?f=2&amp;t=13815">MAMP Forum</a> - MAMP 2.0.1&#8217;s pear is broken</li>
 </ul>
 
 
-<p>I&#8217;m not saying each commit has to revolutionise the world or rewrite the whole system, but <strong>the state of the system should &#8216;smell&#8217; better after each commit than before.</strong> Not smell the same, and definitely not smell worse. Working on some new calculation inside a 7000 line class? Refactor that calculation out in a sensible way. Suddenly that stinky old class is only 6900 lines of crap. I&#8217;d say that smells a little better.</p>
+<p>In hindsight, it was quite easy:<!--more--></p>
 
-<p>Go home at the end of the day being able to say &#8221;<strong>I&#8217;m proud of what I did here</strong>&#8221;.</p>
+<ul>
+    <li>Ensure Xcode is installed - XCode 4.1 is free now in the app store - make sure you install it after it downloads</li>
+    <li>Install homebrew as per the instructions <a href="http://mxcl.github.com/homebrew/">here</a></li>
+    <li>Install memcached by simply
+<code>brew install memcached</code></li>
+    <li>pear in this version of MAMP is broken, to fix it, simply remove pear&#8217;s config file
+<code>mv /Applications/MAMP/bin/php/php5.2.17/conf/pear.conf /Applications/MAMP/bin/php/php5.2.17/conf/pear.conf.old</code></li>
+    <li>As per the section &#8221;<a href="http://www.lullabot.com/articles/setup-memcached-mamp-sandbox-environment">Install Memcache PHP Extension - Option 2</a>&#8221;
+<ul>
+    <li><a href="http://www.php.net/downloads.php">Download the correct version of the php source code for your installed php</a></li>
+    <li>Create the path /Applications/MAMP/bin/php/php5.2.17/include/ and extract the contents of the source code download here.</li>
+    <li>Rename the folder that was created as just &#8216;php&#8217; so you&#8217;ll end up with /Applications/MAMP/bin/php/php5.2.17/include/php</li>
+    <li><code>cd /Applications/MAMP/bin/php/php5.2.17/include/php
+./configure
+cd /Applications/MAMP/bin/php/php5.2.17/bin
+./pecl i memcache</code>
+This should dump memcached.so in the extension folder. If it&#8217;s made something other than /Applications/MAMP/bin/php/php5.2.17/lib/php/extensions/no-debug-non-zts-20060613, move it into there (it&#8217;d only be different in the last part of the path)</li>
+</ul>
+</li>
+    <li>Add this to the extensions part of your php.ini
+<code>
+extension=memcache.so
+</code></li>
+    <li>Restart apache</li>
+</ul>
+
+
+<p>And hey presto, it&#8217;s done.</p>
+
+<p>You could also cheat and just put my <a href="/wp-content/uploads/2011/07/memcache.so">pre-compiled version of memcache.so</a> in your extension folder and go to town.</p>
+
+<p><span style="text-decoration: underline;">Update:</span>
+I&#8217;ve also compiled the php 5.3.6 version of the <code>.so</code> file. <a href="/wp-content/uploads/2011/07/memcache-php5.3.6.so">Download it</a>, rename it back to <code>memcache.so</code>, put it in your extension folder and enjoy.</p>
 </div>
 
 
@@ -142,7 +168,7 @@
   
 
 
-<time datetime="2011-07-26T00:00:00+10:00" pubdate data-updated="true">2011-07-26</time>
+<time datetime="2011-07-25T00:00:00+10:00" pubdate data-updated="true">2011-07-25</time>
       
 
 
@@ -150,7 +176,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://muzzlefork.github.com/blog/2011/07/stop-working-on-shit-code/" data-via="MuzzleFork" data-counturl="http://muzzlefork.github.com/blog/2011/07/stop-working-on-shit-code/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://muzzlefork.github.com/2011/07/os-x-lion-mamp-2-0-1-memcache-and-php-5-2-17/" data-via="MuzzleFork" data-counturl="http://muzzlefork.github.com/2011/07/os-x-lion-mamp-2-0-1-memcache-and-php-5-2-17/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -163,10 +189,10 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2011/07/os-x-lion-mamp-2-0-1-memcache-and-php-5-2-17/" title="Previous Post: OS X Lion + MAMP 2.0.1 + Memcache and PHP 5.2.17">&laquo; OS X Lion + MAMP 2.0.1 + Memcache and PHP 5.2.17</a>
+        <a class="basic-alignment left" href="/2010/06/wiki-class/" title="Previous Post: Wiki Class">&laquo; Wiki Class</a>
       
       
-        <a class="basic-alignment right" href="/blog/2012/01/problems-with-the-default-virtual-host-on-mamp-pro-2-0-5/" title="Next Post: Problems with the default virtual host on MAMP Pro 2.0.5">Problems with the default virtual host on MAMP Pro 2.0.5 &raquo;</a>
+        <a class="basic-alignment right" href="/2011/07/stop-working-on-shit-code/" title="Next Post: Stop working on shit code">Stop working on shit code &raquo;</a>
       
     </p>
   </footer>
@@ -187,23 +213,23 @@
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2012/01/mysql-performance-on-os-x/">MySQL Performance on OS X</a>
+        <a href="/2012/01/mysql-performance-on-os-x/">MySQL Performance on OS X</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2012/01/problems-with-the-default-virtual-host-on-mamp-pro-2-0-5/">Problems with the default virtual host on MAMP Pro 2.0.5</a>
+        <a href="/2012/01/problems-with-the-default-virtual-host-on-mamp-pro-2-0-5/">Problems with the default virtual host on MAMP Pro 2.0.5</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2011/07/stop-working-on-shit-code/">Stop working on shit code</a>
+        <a href="/2011/07/stop-working-on-shit-code/">Stop working on shit code</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2011/07/os-x-lion-mamp-2-0-1-memcache-and-php-5-2-17/">OS X Lion + MAMP 2.0.1 + Memcache and PHP 5.2.17</a>
+        <a href="/2011/07/os-x-lion-mamp-2-0-1-memcache-and-php-5-2-17/">OS X Lion + MAMP 2.0.1 + Memcache and PHP 5.2.17</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2010/06/wiki-class/">Wiki Class</a>
+        <a href="/2010/06/wiki-class/">Wiki Class</a>
       </li>
     
   </ul>
@@ -287,8 +313,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://muzzlefork.github.com/blog/2011/07/stop-working-on-shit-code/';
-        var disqus_url = 'http://muzzlefork.github.com/blog/2011/07/stop-working-on-shit-code/';
+        var disqus_identifier = 'http://muzzlefork.github.com/2011/07/os-x-lion-mamp-2-0-1-memcache-and-php-5-2-17/';
+        var disqus_url = 'http://muzzlefork.github.com/2011/07/os-x-lion-mamp-2-0-1-memcache-and-php-5-2-17/';
         var disqus_script = 'embed.js';
       
     (function () {
