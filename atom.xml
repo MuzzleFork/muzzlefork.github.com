@@ -4,7 +4,7 @@
   <title><![CDATA[Lucas' Thoughts]]></title>
   <link href="http://muzzlefork.github.com/atom.xml" rel="self"/>
   <link href="http://muzzlefork.github.com/"/>
-  <updated>2012-11-02T22:50:39+11:00</updated>
+  <updated>2012-11-02T22:56:04+11:00</updated>
   <id>http://muzzlefork.github.com/</id>
   <author>
     <name><![CDATA[MuzzleFork]]></name>
@@ -39,6 +39,8 @@
 <p>In the project I&#8217;m working on, I expect to have the default behaviour for unmatched host names go to the first virtual host (a default behaviour of the apache virtual host system) and to have some custom virtual host configurations for my Zend Framework app to work (namely &#8220;SetEnv APPLICATION_ENV development&#8221;). After pulling my hair out for a while, I found out why my environment variables weren&#8217;t being sent through to apache and PHP when I was getting the default virtual host: MAMP Pro adds an extra first virtual host above your collection of virtual hosts (trying to be helpful, I assume) which doesn&#8217;t have the custom virtual host directory settings in it and as such, requests will fail.<!--more--></p>
 
 <p>To fix it, go to</p>
+
+<p><img src="http://muzzlefork.github.com/images/mamp-edit-conf.png"></p>
 
 <p><a href="http://www.eagleton.org/wp-content/uploads/2012/01/Screen-Shot-2012-01-23-at-10.09.29-PM.png"><img class="alignnone size-full wp-image-206" title="Screen Shot 2012-01-23 at 10.09.29 PM" src="http://www.eagleton.org/wp-content/uploads/2012/01/Screen-Shot-2012-01-23-at-10.09.29-PM.png" alt="" width="546" height="110" /></a></p>
 
