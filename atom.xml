@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Lucas' Thoughts]]></title>
-  <link href="http://muzzlefork.github.com/atom.xml" rel="self"/>
-  <link href="http://muzzlefork.github.com/"/>
-  <updated>2012-11-04T22:17:28+11:00</updated>
-  <id>http://muzzlefork.github.com/</id>
+  <link href="http://www.eagleton.org/atom.xml" rel="self"/>
+  <link href="http://www.eagleton.org/"/>
+  <updated>2012-11-04T22:29:42+11:00</updated>
+  <id>http://www.eagleton.org/</id>
   <author>
     <name><![CDATA[MuzzleFork]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[MySQL Performance on OS X]]></title>
-    <link href="http://muzzlefork.github.com/2012/01/mysql-performance-on-os-x/"/>
+    <link href="http://www.eagleton.org/2012/01/mysql-performance-on-os-x/"/>
     <updated>2012-01-25T22:50:00+11:00</updated>
-    <id>http://muzzlefork.github.com/2012/01/mysql-performance-on-os-x</id>
+    <id>http://www.eagleton.org/2012/01/mysql-performance-on-os-x</id>
     <content type="html"><![CDATA[<p>Ever wondered why performance of MySQL on OS X was so much worse than a Linux or windows counterpart - especially when doing DROP/CREATE statements (ie in the setup of unit tests etc)? It turns out Mac OS has a safer file creation function than is available on other operating systems and the use of that slows down performance of file operations in MySQL.</p>
 
 <p>You can fix this quickly by adding the following to your <strong>my.cnf</strong> file in the<strong> [server]</strong> block. It&#8217;s probably best not to do this in production, but who actually uses OS X as a production web server anyway?</p>
@@ -31,16 +31,16 @@
   
   <entry>
     <title type="html"><![CDATA[Problems with the default virtual host on MAMP Pro 2.0.5]]></title>
-    <link href="http://muzzlefork.github.com/2012/01/problems-with-the-default-virtual-host-on-mamp-pro-2-0-5/"/>
+    <link href="http://www.eagleton.org/2012/01/problems-with-the-default-virtual-host-on-mamp-pro-2-0-5/"/>
     <updated>2012-01-23T00:00:00+11:00</updated>
-    <id>http://muzzlefork.github.com/2012/01/problems-with-the-default-virtual-host-on-mamp-pro-2-0-5</id>
+    <id>http://www.eagleton.org/2012/01/problems-with-the-default-virtual-host-on-mamp-pro-2-0-5</id>
     <content type="html"><![CDATA[<p>I&#8217;ve recently upgraded to MAMP Pro and I like how I can easily add virtual hosts in its UI - something I had previously done in code in the free version and on older machines running windows, Linux etc. I ran into a strange problem with MAMP though.</p>
 
 <p>In the project I&#8217;m working on, I expect to have the default behaviour for unmatched host names go to the first virtual host (a default behaviour of the apache virtual host system) and to have some custom virtual host configurations for my Zend Framework app to work (namely &#8220;SetEnv APPLICATION_ENV development&#8221;). After pulling my hair out for a while, I found out why my environment variables weren&#8217;t being sent through to apache and PHP when I was getting the default virtual host: MAMP Pro adds an extra first virtual host above your collection of virtual hosts (trying to be helpful, I assume) which doesn&#8217;t have the custom virtual host directory settings in it and as such, requests will fail.<!--more--></p>
 
 <p>To fix it, go to</p>
 
-<p><img src="http://muzzlefork.github.com/images/mamp-edit-conf.png" width="546" height="110"></p>
+<p><img src="http://www.eagleton.org/images/mamp-edit-conf.png" width="546" height="110"></p>
 
 <p>and make the following change:</p>
 
@@ -55,9 +55,9 @@
   
   <entry>
     <title type="html"><![CDATA[Stop working on shit code]]></title>
-    <link href="http://muzzlefork.github.com/2011/07/stop-working-on-shit-code/"/>
+    <link href="http://www.eagleton.org/2011/07/stop-working-on-shit-code/"/>
     <updated>2011-07-26T00:00:00+10:00</updated>
-    <id>http://muzzlefork.github.com/2011/07/stop-working-on-shit-code</id>
+    <id>http://www.eagleton.org/2011/07/stop-working-on-shit-code</id>
     <content type="html"><![CDATA[<p>Do you work on old, shitty code? Does it stink? Each time you have to work on that same file that drives you nuts, does it make you question your sanity?</p>
 
 <p>In my day job, if there&#8217;s something that&#8217;ll bring tears to a developer&#8217;s eyes, it&#8217;s being given a story to work on that involves touching a 6~7 year old file called <code>sales.php</code>. This file is a monstrous 7000+ lines long and is a gigantic state machine that is confusing and highly prone to malfunction. It also loosely forms the &#8220;C&#8221; and the &#8220;V&#8221; of a fairly broken MVC structure. To make matters worse, over the years, there have been ~10 different developers &#8216;work&#8217; on it and it&#8217;s a delicate debacle of different coding styles, motivations and business desires.<!--more--></p>
@@ -81,9 +81,9 @@
   
   <entry>
     <title type="html"><![CDATA[OS X Lion + MAMP 2.0.1 + Memcache and PHP 5.2.17]]></title>
-    <link href="http://muzzlefork.github.com/2011/07/os-x-lion-mamp-2-0-1-memcache-and-php-5-2-17/"/>
+    <link href="http://www.eagleton.org/2011/07/os-x-lion-mamp-2-0-1-memcache-and-php-5-2-17/"/>
     <updated>2011-07-25T00:00:00+10:00</updated>
-    <id>http://muzzlefork.github.com/2011/07/os-x-lion-mamp-2-0-1-memcache-and-php-5-2-17</id>
+    <id>http://www.eagleton.org/2011/07/os-x-lion-mamp-2-0-1-memcache-and-php-5-2-17</id>
     <content type="html"><![CDATA[<p>After a fresh install of Lion, getting up to speed with my normal MAMP dev setup + memcached wasn&#8217;t as easy as on Snow Leopard. I ended up seeking inspiration from the following articles:</p>
 
 <ul>
@@ -124,18 +124,18 @@ extension=memcache.so
 
 <p>And hey presto, it&#8217;s done.</p>
 
-<p>You could also cheat and just put my <a href="http://muzzlefork.github.com/wp-content/uploads/2011/07/memcache.so">pre-compiled version of memcache.so</a> in your extension folder and go to town.</p>
+<p>You could also cheat and just put my <a href="http://www.eagleton.org/wp-content/uploads/2011/07/memcache.so">pre-compiled version of memcache.so</a> in your extension folder and go to town.</p>
 
 <p><span style="text-decoration: underline;">Update:</span>
-I&#8217;ve also compiled the php 5.3.6 version of the <code>.so</code> file. <a href="http://muzzlefork.github.com/wp-content/uploads/2011/07/memcache-php5.3.6.so">Download it</a>, rename it back to <code>memcache.so</code>, put it in your extension folder and enjoy.</p>
+I&#8217;ve also compiled the php 5.3.6 version of the <code>.so</code> file. <a href="http://www.eagleton.org/wp-content/uploads/2011/07/memcache-php5.3.6.so">Download it</a>, rename it back to <code>memcache.so</code>, put it in your extension folder and enjoy.</p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Wiki Class]]></title>
-    <link href="http://muzzlefork.github.com/2010/06/wiki-class/"/>
+    <link href="http://www.eagleton.org/2010/06/wiki-class/"/>
     <updated>2010-06-08T21:44:00+10:00</updated>
-    <id>http://muzzlefork.github.com/2010/06/wiki-class</id>
+    <id>http://www.eagleton.org/2010/06/wiki-class</id>
     <content type="html"><![CDATA[<p>Ages ago, I wrote a simple class to enable some scripts to update our wiki. A friend asked for a copy, so here it is:<!--more--></p>
 
 <div><script src='https://gist.github.com/1598093.js?file='></script>

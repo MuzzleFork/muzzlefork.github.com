@@ -1,39 +1,37 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
-        <loc>http://muzzlefork.github.com/2010/06/wiki-class/</loc>
+        <loc>http://www.eagleton.org/2010/06/wiki-class/</loc>
         <lastmod>2012-11-04T21:38:57+11:00</lastmod>
     </url>
     <url>
-        <loc>
-            http://muzzlefork.github.com/2011/07/os-x-lion-mamp-2-0-1-memcache-and-php-5-2-17/
-        </loc>
+        <loc>http://www.eagleton.org/2011/07/os-x-lion-mamp-2-0-1-memcache-and-php-5-2-17/</loc>
         <lastmod>2012-11-04T21:40:25+11:00</lastmod>
     </url>
     <url>
-        <loc>http://muzzlefork.github.com/2011/07/stop-working-on-shit-code/</loc>
+        <loc>http://www.eagleton.org/2011/07/stop-working-on-shit-code/</loc>
         <lastmod>2012-11-04T21:39:53+11:00</lastmod>
     </url>
     <url>
         <loc>
-            http://muzzlefork.github.com/2012/01/problems-with-the-default-virtual-host-on-mamp-pro-2-0-5/
+            http://www.eagleton.org/2012/01/problems-with-the-default-virtual-host-on-mamp-pro-2-0-5/
         </loc>
         <lastmod>2012-11-04T21:38:04+11:00</lastmod>
     </url>
     <url>
-        <loc>http://muzzlefork.github.com/2012/01/mysql-performance-on-os-x/</loc>
+        <loc>http://www.eagleton.org/2012/01/mysql-performance-on-os-x/</loc>
         <lastmod>2012-11-04T21:50:08+11:00</lastmod>
     </url>
     <url>
-        <loc>http://muzzlefork.github.com/about/</loc>
+        <loc>http://www.eagleton.org/about/</loc>
         <lastmod>2012-11-04T21:33:00+11:00</lastmod>
     </url>
     <url>
-        <loc>http://muzzlefork.github.com/archive/</loc>
+        <loc>http://www.eagleton.org/archive/</loc>
         <lastmod>2012-11-04T21:50:08+11:00</lastmod>
     </url>
     <url>
-        <loc>http://muzzlefork.github.com/</loc>
+        <loc>http://www.eagleton.org/</loc>
         <lastmod>2012-11-04T21:50:08+11:00</lastmod>
     </url>
 </urlset>

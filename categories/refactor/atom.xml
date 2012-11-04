@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: refactor | Lucas' Thoughts]]></title>
-  <link href="http://muzzlefork.github.com/categories/refactor/atom.xml" rel="self"/>
-  <link href="http://muzzlefork.github.com/"/>
-  <updated>2012-11-04T22:17:28+11:00</updated>
-  <id>http://muzzlefork.github.com/</id>
+  <link href="http://www.eagleton.org/categories/refactor/atom.xml" rel="self"/>
+  <link href="http://www.eagleton.org/"/>
+  <updated>2012-11-04T22:29:42+11:00</updated>
+  <id>http://www.eagleton.org/</id>
   <author>
     <name><![CDATA[MuzzleFork]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Stop working on shit code]]></title>
-    <link href="http://muzzlefork.github.com/2011/07/stop-working-on-shit-code/"/>
+    <link href="http://www.eagleton.org/2011/07/stop-working-on-shit-code/"/>
     <updated>2011-07-26T00:00:00+10:00</updated>
-    <id>http://muzzlefork.github.com/2011/07/stop-working-on-shit-code</id>
+    <id>http://www.eagleton.org/2011/07/stop-working-on-shit-code</id>
     <content type="html"><![CDATA[<p>Do you work on old, shitty code? Does it stink? Each time you have to work on that same file that drives you nuts, does it make you question your sanity?</p>
 
 <p>In my day job, if there's something that'll bring tears to a developer's eyes, it's being given a story to work on that involves touching a 6~7 year old file called <code>sales.php</code>. This file is a monstrous 7000+ lines long and is a gigantic state machine that is confusing and highly prone to malfunction. It also loosely forms the "C" and the "V" of a fairly broken MVC structure. To make matters worse, over the years, there have been ~10 different developers 'work' on it and it's a delicate debacle of different coding styles, motivations and business desires.<!--more--></p>

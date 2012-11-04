@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: compile | Lucas' Thoughts]]></title>
-  <link href="http://muzzlefork.github.com/categories/compile/atom.xml" rel="self"/>
-  <link href="http://muzzlefork.github.com/"/>
-  <updated>2012-11-04T22:17:28+11:00</updated>
-  <id>http://muzzlefork.github.com/</id>
+  <link href="http://www.eagleton.org/categories/compile/atom.xml" rel="self"/>
+  <link href="http://www.eagleton.org/"/>
+  <updated>2012-11-04T22:29:42+11:00</updated>
+  <id>http://www.eagleton.org/</id>
   <author>
     <name><![CDATA[MuzzleFork]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[OS X Lion + MAMP 2.0.1 + Memcache and PHP 5.2.17]]></title>
-    <link href="http://muzzlefork.github.com/2011/07/os-x-lion-mamp-2-0-1-memcache-and-php-5-2-17/"/>
+    <link href="http://www.eagleton.org/2011/07/os-x-lion-mamp-2-0-1-memcache-and-php-5-2-17/"/>
     <updated>2011-07-25T00:00:00+10:00</updated>
-    <id>http://muzzlefork.github.com/2011/07/os-x-lion-mamp-2-0-1-memcache-and-php-5-2-17</id>
+    <id>http://www.eagleton.org/2011/07/os-x-lion-mamp-2-0-1-memcache-and-php-5-2-17</id>
     <content type="html"><![CDATA[<p>After a fresh install of Lion, getting up to speed with my normal MAMP dev setup + memcached wasn't as easy as on Snow Leopard. I ended up seeking inspiration from the following articles:</p>
 
 <ul>
@@ -58,10 +58,10 @@ extension=memcache.so
 
 <p>And hey presto, it's done.</p>
 
-<p>You could also cheat and just put my <a href="http://muzzlefork.github.com/wp-content/uploads/2011/07/memcache.so">pre-compiled version of memcache.so</a> in your extension folder and go to town.</p>
+<p>You could also cheat and just put my <a href="http://www.eagleton.org/wp-content/uploads/2011/07/memcache.so">pre-compiled version of memcache.so</a> in your extension folder and go to town.</p>
 
 <p><span style="text-decoration: underline;">Update:</span>
-I've also compiled the php 5.3.6 version of the <code>.so</code> file. <a href="http://muzzlefork.github.com/wp-content/uploads/2011/07/memcache-php5.3.6.so">Download it</a>, rename it back to <code>memcache.so</code>, put it in your extension folder and enjoy.</p>
+I've also compiled the php 5.3.6 version of the <code>.so</code> file. <a href="http://www.eagleton.org/wp-content/uploads/2011/07/memcache-php5.3.6.so">Download it</a>, rename it back to <code>memcache.so</code>, put it in your extension folder and enjoy.</p>
 ]]></content>
   </entry>
   

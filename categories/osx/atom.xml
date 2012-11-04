@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: osx | Lucas' Thoughts]]></title>
-  <link href="http://muzzlefork.github.com/categories/osx/atom.xml" rel="self"/>
-  <link href="http://muzzlefork.github.com/"/>
-  <updated>2012-11-04T22:17:28+11:00</updated>
-  <id>http://muzzlefork.github.com/</id>
+  <link href="http://www.eagleton.org/categories/osx/atom.xml" rel="self"/>
+  <link href="http://www.eagleton.org/"/>
+  <updated>2012-11-04T22:29:42+11:00</updated>
+  <id>http://www.eagleton.org/</id>
   <author>
     <name><![CDATA[MuzzleFork]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[MySQL Performance on OS X]]></title>
-    <link href="http://muzzlefork.github.com/2012/01/mysql-performance-on-os-x/"/>
+    <link href="http://www.eagleton.org/2012/01/mysql-performance-on-os-x/"/>
     <updated>2012-01-25T22:50:00+11:00</updated>
-    <id>http://muzzlefork.github.com/2012/01/mysql-performance-on-os-x</id>
+    <id>http://www.eagleton.org/2012/01/mysql-performance-on-os-x</id>
     <content type="html"><![CDATA[<p>Ever wondered why performance of MySQL on OS X was so much worse than a Linux or windows counterpart - especially when doing DROP/CREATE statements (ie in the setup of unit tests etc)? It turns out Mac OS has a safer file creation function than is available on other operating systems and the use of that slows down performance of file operations in MySQL.</p>
 
 <p>You can fix this quickly by adding the following to your <strong>my.cnf</strong> file in the<strong> [server]</strong> block. It's probably best not to do this in production, but who actually uses OS X as a production web server anyway?</p>
@@ -31,9 +31,9 @@
   
   <entry>
     <title type="html"><![CDATA[Problems with the default virtual host on MAMP Pro 2.0.5]]></title>
-    <link href="http://muzzlefork.github.com/2012/01/problems-with-the-default-virtual-host-on-mamp-pro-2-0-5/"/>
+    <link href="http://www.eagleton.org/2012/01/problems-with-the-default-virtual-host-on-mamp-pro-2-0-5/"/>
     <updated>2012-01-23T00:00:00+11:00</updated>
-    <id>http://muzzlefork.github.com/2012/01/problems-with-the-default-virtual-host-on-mamp-pro-2-0-5</id>
+    <id>http://www.eagleton.org/2012/01/problems-with-the-default-virtual-host-on-mamp-pro-2-0-5</id>
     <content type="html"><![CDATA[<p>I've recently upgraded to MAMP Pro and I like how I can easily add virtual hosts in its UI - something I had previously done in code in the free version and on older machines running windows, Linux etc. I ran into a strange problem with MAMP though.</p>
 
 <p>In the project I'm working on, I expect to have the default behaviour for unmatched host names go to the first virtual host (a default behaviour of the apache virtual host system) and to have some custom virtual host configurations for my Zend Framework app to work (namely "SetEnv APPLICATION_ENV development"). After pulling my hair out for a while, I found out why my environment variables weren't being sent through to apache and PHP when I was getting the default virtual host: MAMP Pro adds an extra first virtual host above your collection of virtual hosts (trying to be helpful, I assume) which doesn't have the custom virtual host directory settings in it and as such, requests will fail.<!--more--></p>
