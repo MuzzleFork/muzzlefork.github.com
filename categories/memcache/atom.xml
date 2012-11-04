@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: memcache | Lucas' Thoughts]]></title>
+  <link href="http://muzzlefork.github.com/categories/memcache/atom.xml" rel="self"/>
+  <link href="http://muzzlefork.github.com/"/>
+  <updated>2012-11-04T21:47:50+11:00</updated>
+  <id>http://muzzlefork.github.com/</id>
+  <author>
+    <name><![CDATA[MuzzleFork]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[OS X Lion + MAMP 2.0.1 + Memcache and PHP 5.2.17]]></title>
+    <link href="http://muzzlefork.github.com/2011/07/os-x-lion-mamp-2-0-1-memcache-and-php-5-2-17/"/>
+    <updated>2011-07-25T00:00:00+10:00</updated>
+    <id>http://muzzlefork.github.com/2011/07/os-x-lion-mamp-2-0-1-memcache-and-php-5-2-17</id>
+    <content type="html"><![CDATA[<p>After a fresh install of Lion, getting up to speed with my normal MAMP dev setup + memcached wasn't as easy as on Snow Leopard. I ended up seeking inspiration from the following articles:</p>
+
+<ul>
+    <li><a href="http://mxcl.github.com/homebrew/">Homebrew</a> - for installing memcached</li>
+    <li><a href="http://www.lullabot.com/articles/setup-memcached-mamp-sandbox-environment">Lullabot's article about memcached with mamp</a></li>
+    <li><a href="http://forum.mamp.info/viewtopic.php?f=2&amp;t=13815">MAMP Forum</a> - MAMP 2.0.1's pear is broken</li>
+</ul>
+
+
+<p>In hindsight, it was quite easy:<!--more--></p>
+
+<ul>
+    <li>Ensure Xcode is installed - XCode 4.1 is free now in the app store - make sure you install it after it downloads</li>
+    <li>Install homebrew as per the instructions <a href="http://mxcl.github.com/homebrew/">here</a></li>
+    <li>Install memcached by simply
+<code>brew install memcached</code></li>
+    <li>pear in this version of MAMP is broken, to fix it, simply remove pear's config file
+<code>mv /Applications/MAMP/bin/php/php5.2.17/conf/pear.conf /Applications/MAMP/bin/php/php5.2.17/conf/pear.conf.old</code></li>
+    <li>As per the section "<a href="http://www.lullabot.com/articles/setup-memcached-mamp-sandbox-environment">Install Memcache PHP Extension - Option 2</a>"
+<ul>
+    <li><a href="http://www.php.net/downloads.php">Download the correct version of the php source code for your installed php</a></li>
+    <li>Create the path /Applications/MAMP/bin/php/php5.2.17/include/ and extract the contents of the source code download here.</li>
+    <li>Rename the folder that was created as just 'php' so you'll end up with /Applications/MAMP/bin/php/php5.2.17/include/php</li>
+    <li><code>cd /Applications/MAMP/bin/php/php5.2.17/include/php
+./configure
+cd /Applications/MAMP/bin/php/php5.2.17/bin
+./pecl i memcache</code>
+This should dump memcached.so in the extension folder. If it's made something other than /Applications/MAMP/bin/php/php5.2.17/lib/php/extensions/no-debug-non-zts-20060613, move it into there (it'd only be different in the last part of the path)</li>
+</ul>
+</li>
+    <li>Add this to the extensions part of your php.ini
+<code>
+extension=memcache.so
+</code></li>
+    <li>Restart apache</li>
+</ul>
+
+
+<p>And hey presto, it's done.</p>
+
+<p>You could also cheat and just put my <a href="http://muzzlefork.github.com/wp-content/uploads/2011/07/memcache.so">pre-compiled version of memcache.so</a> in your extension folder and go to town.</p>
+
+<p><span style="text-decoration: underline;">Update:</span>
+I've also compiled the php 5.3.6 version of the <code>.so</code> file. <a href="http://muzzlefork.github.com/wp-content/uploads/2011/07/memcache-php5.3.6.so">Download it</a>, rename it back to <code>memcache.so</code>, put it in your extension folder and enjoy.</p>
+]]></content>
+  </entry>
+  
+</feed>

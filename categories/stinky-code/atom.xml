@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: stinky-code | Lucas' Thoughts]]></title>
+  <link href="http://muzzlefork.github.com/categories/stinky-code/atom.xml" rel="self"/>
+  <link href="http://muzzlefork.github.com/"/>
+  <updated>2012-11-04T21:47:50+11:00</updated>
+  <id>http://muzzlefork.github.com/</id>
+  <author>
+    <name><![CDATA[MuzzleFork]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Stop working on shit code]]></title>
+    <link href="http://muzzlefork.github.com/2011/07/stop-working-on-shit-code/"/>
+    <updated>2011-07-26T00:00:00+10:00</updated>
+    <id>http://muzzlefork.github.com/2011/07/stop-working-on-shit-code</id>
+    <content type="html"><![CDATA[<p>Do you work on old, shitty code? Does it stink? Each time you have to work on that same file that drives you nuts, does it make you question your sanity?</p>
+
+<p>In my day job, if there's something that'll bring tears to a developer's eyes, it's being given a story to work on that involves touching a 6~7 year old file called <code>sales.php</code>. This file is a monstrous 7000+ lines long and is a gigantic state machine that is confusing and highly prone to malfunction. It also loosely forms the "C" and the "V" of a fairly broken MVC structure. To make matters worse, over the years, there have been ~10 different developers 'work' on it and it's a delicate debacle of different coding styles, motivations and business desires.<!--more--></p>
+
+<p>Every developer who has ever had the misfortune of working with this file (and the rest of the broken MVC) has always cried out that the whole system needs rewriting (and rightly so), but it's hard to sell that to the business when it'll a) take ages, b) probably take longer than that, c) in the meantime, they get no new features and d) will, once completed, probably be just as bad as the old one (and hey presto, it's now outdated too). I was talking to a colleague about this the other week and came to a realisation about it.</p>
+
+<p><strong>Stop working on shit code! We're better than that.</strong> After working with this software for 3 years, I can't say that I'm proud of the work I've done there (my colleague was 6 years - he couldn't either) - I've just continued the legacy of bad code because the barrier to change was too high. If you can't be proud of your work, then when you look back on it later, you'll realise you've wasted your time (and your company's). As of that day, my new work ethos is centred around pride.</p>
+
+<ul>
+    <li>As I commit each changeset, I want to be able to say I'm proud of the code I'm committing.</li>
+    <li>I respect my colleagues as professionals and friends. When they peer review my work, I don't want them to think "Wow, what a lame way to do that" or "wouldn't it be great if he did 'xyz'?". If they do think I've done something poorly, I <strong>want</strong> them to call me out on it. If they know some smarter way to do it, teach me. If I've left a debugging line in or a dodgy comment, make me fix it.</li>
+    <li>Conversely, when I peer review my colleague's work, I want to know that what I'm seeing is their best solution to the problem and that they are proud of the work they're showing me. I will tell them if I think it stinks and explain why.</li>
+</ul>
+
+
+<p>I'm not saying each commit has to revolutionise the world or rewrite the whole system, but <strong>the state of the system should 'smell' better after each commit than before.</strong> Not smell the same, and definitely not smell worse. Working on some new calculation inside a 7000 line class? Refactor that calculation out in a sensible way. Suddenly that stinky old class is only 6900 lines of crap. I'd say that smells a little better.</p>
+
+<p>Go home at the end of the day being able to say "<strong>I'm proud of what I did here</strong>".</p>
+]]></content>
+  </entry>
+  
+</feed>

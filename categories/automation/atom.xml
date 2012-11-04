@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: automation | Lucas' Thoughts]]></title>
+  <link href="http://muzzlefork.github.com/categories/automation/atom.xml" rel="self"/>
+  <link href="http://muzzlefork.github.com/"/>
+  <updated>2012-11-04T21:47:50+11:00</updated>
+  <id>http://muzzlefork.github.com/</id>
+  <author>
+    <name><![CDATA[MuzzleFork]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Wiki Class]]></title>
+    <link href="http://muzzlefork.github.com/2010/06/wiki-class/"/>
+    <updated>2010-06-08T21:44:00+10:00</updated>
+    <id>http://muzzlefork.github.com/2010/06/wiki-class</id>
+    <content type="html"><![CDATA[<p>Ages ago, I wrote a simple class to enable some scripts to update our wiki. A friend asked for a copy, so here it is:<!--more-->
+<div><script src='https://gist.github.com/1598093.js?file='></script>
+<noscript><pre><code>&lt;?php
+$wiki = new wiki('http://mywikiurl.com/api.php');
+$wiki-&gt;edit('pageName', 'contents');
+?&gt;</code></pre></noscript></div>
+</p>
+]]></content>
+  </entry>
+  
+</feed>

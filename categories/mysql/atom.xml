@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: mysql | Lucas' Thoughts]]></title>
+  <link href="http://muzzlefork.github.com/categories/mysql/atom.xml" rel="self"/>
+  <link href="http://muzzlefork.github.com/"/>
+  <updated>2012-11-04T21:47:50+11:00</updated>
+  <id>http://muzzlefork.github.com/</id>
+  <author>
+    <name><![CDATA[MuzzleFork]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[MySQL Performance on OS X]]></title>
+    <link href="http://muzzlefork.github.com/2012/01/mysql-performance-on-os-x/"/>
+    <updated>2012-01-25T22:50:00+11:00</updated>
+    <id>http://muzzlefork.github.com/2012/01/mysql-performance-on-os-x</id>
+    <content type="html"><![CDATA[<p>BBoo. Ever wondered why performance of MySQL on OS X was so much worse than a Linux or windows counterpart - especially when doing DROP/CREATE statements (ie in the setup of unit tests etc)? It turns out Mac OS has a safer file creation function than is available on other operating systems and the use of that slows down performance of file operations in MySQL.</p>
+
+<p>You can fix this quickly by adding the following to your <strong>my.cnf</strong> file in the<strong> [server]</strong> block. It's probably best not to do this in production, but who actually uses OS X as a production web server anyway?</p>
+
+<pre>skip-sync-frm=OFF</pre>
+
+
+<p>Source: <a href="http://bugs.mysql.com/bug.php?id=56550">The original MySQL bug report</a> (although it's not really a bug).</p>
+]]></content>
+  </entry>
+  
+</feed>
