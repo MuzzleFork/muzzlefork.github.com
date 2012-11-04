@@ -1,0 +1,20 @@
+---
+layout: post
+title: "Problems with the default virtual host on MAMP Pro 2.0.5"
+date: 2012-01-23
+comments: true
+categories: apache mamp osx osx-lion
+---
+I've recently upgraded to MAMP Pro and I like how I can easily add virtual hosts in its UI - something I had previously done in code in the free version and on older machines running windows, Linux etc. I ran into a strange problem with MAMP though.
+
+In the project I'm working on, I expect to have the default behaviour for unmatched host names go to the first virtual host (a default behaviour of the apache virtual host system) and to have some custom virtual host configurations for my Zend Framework app to work (namely "SetEnv APPLICATION_ENV development"). After pulling my hair out for a while, I found out why my environment variables weren't being sent through to apache and PHP when I was getting the default virtual host: MAMP Pro adds an extra first virtual host above your collection of virtual hosts (trying to be helpful, I assume) which doesn't have the custom virtual host directory settings in it and as such, requests will fail.<!--more-->
+
+To fix it, go to
+
+{% img /images/mamp-edit-conf.png 546 110 %}
+
+and make the following change:
+<script src="https://gist.github.com/3060058.js"> </script>
+Of note here are the commented out lines. This port iteration business sets up an empty virtual host at the start of the list which is responsible for handling all failed matches of the following entries - AKA the default virtual host. In my version of the file, this is around line 570, but you should see it about 60 lines before the end of the file.
+
+Then restart apache. You'll find in your compiled httpd.conf file (/Library/Application Support/appsolute/MAMP PRO/conf/httpd.conf), you no longer have the extra virtual host definition above the ones you've explicitly defined and the extra settings you've added into the definition for your first virtual host will be passed along correctly to all unmatched web requests.
