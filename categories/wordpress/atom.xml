@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: wordpress | Lucas' Thoughts]]></title>
+  <link href="http://www.eagleton.org/categories/wordpress/atom.xml" rel="self"/>
+  <link href="http://www.eagleton.org/"/>
+  <updated>2012-11-05T22:46:29+11:00</updated>
+  <id>http://www.eagleton.org/</id>
+  <author>
+    <name><![CDATA[MuzzleFork]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Another new blogging engine]]></title>
+    <link href="http://www.eagleton.org/2012/11/another-new-blogging-engine/"/>
+    <updated>2012-11-05T21:11:00+11:00</updated>
+    <id>http://www.eagleton.org/2012/11/another-new-blogging-engine</id>
+    <content type="html"><![CDATA[<p>This blog tends to get updated... sporadically. I get the energy to post more often and that generally results in transferring the content from one blog engine to another - sometimes the new blog doesn't even get a new post. This time, I'm changing from wordpress to octopress, living in GitHub pages and I guess, once again, I'll pledge to post more often.</p>
+
+<!-- more -->
+
+
+<h2>Benefits</h2>
+
+<ul>
+<li>I can hack away on posts in <a href="http://www.sublimetext.com/">Sublime Text 2</a> and deploy them whenever I'm ready.</li>
+<li>I can write my posts in markdown which is great.</li>
+<li>I found a great <a href="https://github.com/blueplanet/sublime-text-2-octopress">octopress plugin for sublime</a> which is really handy and to which I've been able to contribute some changes and features to.</li>
+<li>Octopress and Jekyll are in ruby, ST2 plugins are in python and the existing templates use LESS. A nice change to my day-to-day life as a PHP developer to hack around in some new technologies.</li>
+<li>Performance of effectively static media via GitHub pages is much better than loading pages through wordpress' database driven structure. See if you can tell when I changed the hosting arrangement in the graph below.</li>
+</ul>
+
+
+<p><img class="[class names]" src="/images/wordpress-octopress-performance.png" width="678" height="454" title="Page load performance improvement - guess when I changed the hosting arrangement" ></p>
+
+<h2>Detractors</h2>
+
+<ul>
+<li>I actually really liked wordpress' stats available through JetPack. I've set up Google Analytics, but while it's probably a better product, it's just not as friendly.</li>
+<li>Wordpress has so many themes available. This is possibly a benefit though - I used to get <a href="http://en.wikipedia.org/wiki/Analysis_paralysis">analysis paralysis</a> in attempting to decide which one to use.</li>
+</ul>
+
+
+<p>Let's see how I go. Hereby pledging (once again) to post more often, keeping it technical.</p>
+]]></content>
+  </entry>
+  
+</feed>

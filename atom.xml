@@ -4,7 +4,7 @@
   <title><![CDATA[Lucas' Thoughts]]></title>
   <link href="http://www.eagleton.org/atom.xml" rel="self"/>
   <link href="http://www.eagleton.org/"/>
-  <updated>2012-11-05T15:19:12+11:00</updated>
+  <updated>2012-11-05T22:46:29+11:00</updated>
   <id>http://www.eagleton.org/</id>
   <author>
     <name><![CDATA[MuzzleFork]]></name>
@@ -12,6 +12,41 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Another new blogging engine]]></title>
+    <link href="http://www.eagleton.org/2012/11/another-new-blogging-engine/"/>
+    <updated>2012-11-05T21:11:00+11:00</updated>
+    <id>http://www.eagleton.org/2012/11/another-new-blogging-engine</id>
+    <content type="html"><![CDATA[<p>This blog tends to get updated&#8230; sporadically. I get the energy to post more often and that generally results in transferring the content from one blog engine to another - sometimes the new blog doesn&#8217;t even get a new post. This time, I&#8217;m changing from wordpress to octopress, living in GitHub pages and I guess, once again, I&#8217;ll pledge to post more often.</p>
+
+<!-- more -->
+
+
+<h2>Benefits</h2>
+
+<ul>
+<li>I can hack away on posts in <a href="http://www.sublimetext.com/">Sublime Text 2</a> and deploy them whenever I&#8217;m ready.</li>
+<li>I can write my posts in markdown which is great.</li>
+<li>I found a great <a href="https://github.com/blueplanet/sublime-text-2-octopress">octopress plugin for sublime</a> which is really handy and to which I&#8217;ve been able to contribute some changes and features to.</li>
+<li>Octopress and Jekyll are in ruby, ST2 plugins are in python and the existing templates use LESS. A nice change to my day-to-day life as a PHP developer to hack around in some new technologies.</li>
+<li>Performance of effectively static media via GitHub pages is much better than loading pages through wordpress&#8217; database driven structure. See if you can tell when I changed the hosting arrangement in the graph below.</li>
+</ul>
+
+
+<p><img class="[class names]" src="http://www.eagleton.org/images/wordpress-octopress-performance.png" width="678" height="454" title="Page load performance improvement - guess when I changed the hosting arrangement" ></p>
+
+<h2>Detractors</h2>
+
+<ul>
+<li>I actually really liked wordpress&#8217; stats available through JetPack. I&#8217;ve set up Google Analytics, but while it&#8217;s probably a better product, it&#8217;s just not as friendly.</li>
+<li>Wordpress has so many themes available. This is possibly a benefit though - I used to get <a href="http://en.wikipedia.org/wiki/Analysis_paralysis">analysis paralysis</a> in attempting to decide which one to use.</li>
+</ul>
+
+
+<p>Let&#8217;s see how I go. Hereby pledging (once again) to post more often, keeping it technical.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[MySQL Performance on OS X]]></title>
