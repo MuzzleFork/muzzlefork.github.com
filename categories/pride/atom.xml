@@ -4,7 +4,7 @@
   <title><![CDATA[Category: pride | Lucas' Thoughts]]></title>
   <link href="http://www.eagleton.org/categories/pride/atom.xml" rel="self"/>
   <link href="http://www.eagleton.org/"/>
-  <updated>2012-12-04T12:09:05+11:00</updated>
+  <updated>2012-12-04T12:09:35+11:00</updated>
   <id>http://www.eagleton.org/</id>
   <author>
     <name><![CDATA[MuzzleFork]]></name>
@@ -36,8 +36,6 @@
 <p>I'm not saying each commit has to revolutionise the world or rewrite the whole system, but <strong>the state of the system should 'smell' better after each commit than before.</strong> Not smell the same, and definitely not smell worse. Working on some new calculation inside a 7000 line class? Refactor that calculation out in a sensible way. Suddenly that stinky old class is only 6900 lines of crap. I'd say that smells a little better.</p>
 
 <p>Go home at the end of the day being able to say "<strong>I'm proud of what I did here</strong>".</p>
-
-<p>Bazinga</p>
 ]]></content>
   </entry>
   
