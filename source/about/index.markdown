@@ -16,7 +16,8 @@ var lucas = {
 	"roles":[
 		"husband",
 		"father",
-		"programmer"
+		"programmer",
+		"scrum master"
 	],
 	"interests" :[
 		"cooking",
