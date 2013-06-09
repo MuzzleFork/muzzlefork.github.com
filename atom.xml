@@ -4,7 +4,7 @@
   <title><![CDATA[Lucas' Thoughts]]></title>
   <link href="http://www.eagleton.org/atom.xml" rel="self"/>
   <link href="http://www.eagleton.org/"/>
-  <updated>2012-12-17T16:54:33+11:00</updated>
+  <updated>2013-06-09T13:13:17+10:00</updated>
   <id>http://www.eagleton.org/</id>
   <author>
     <name><![CDATA[MuzzleFork]]></name>
@@ -12,6 +12,19 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Renewed interest]]></title>
+    <link href="http://www.eagleton.org/2013/06/renewed-interest/"/>
+    <updated>2013-06-09T11:52:00+10:00</updated>
+    <id>http://www.eagleton.org/2013/06/renewed-interest</id>
+    <content type="html"><![CDATA[<p>Well, it looks like the <a href="http://www.eagleton.org/2012/11/another-new-blogging-engine/">pledge</a> I made when I replaced WordPress with Octopress for my blog didn&#8217;t last too long - i.e. I didn&#8217;t even get one article out after making that pledge. That&#8217;s pretty poor.<!-- More --></p>
+
+<p>Over the last few weekends, I&#8217;ve caught up with an <a href="https://twitter.com/sammyjarrett">old buddy</a> to get our nerd on and work on some nerdy things. This weekend, we looked at Octopress (in the interest of setting it up for him) and it got me interested in posting more. So, here&#8217;s a new theme (so it&#8217;s not stock-standard Octopress flavour) and hopefully more of a commitment to getting some content out there..</p>
+
+<p>I&#8217;ve recently completed Certified Scrum Master training and have deployed some websites to a new hosting setup with <a href="https://www.digitalocean.com/?refcode=1d72a90eb581">Digital Ocean</a> (NB: Referral code embedded in that link) which I&#8217;ve found to be a fast, cheap and easy way to manage a host for the nerdier amongst us. Expect some posts in the coming weeks covering some of those topics.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Another new blogging engine]]></title>
@@ -53,7 +66,7 @@
     <link href="http://www.eagleton.org/2012/01/mysql-performance-on-os-x/"/>
     <updated>2012-01-25T22:50:00+11:00</updated>
     <id>http://www.eagleton.org/2012/01/mysql-performance-on-os-x</id>
-    <content type="html"><![CDATA[<p>Ever wondered why performance of MySQL on OS X was so much worse than a Linux or windows counterpart - especially when doing DROP/CREATE statements (ie in the setup of unit tests etc)? It turns out Mac OS has a safer file creation function than is available on other operating systems and the use of that slows down performance of file operations in MySQL.</p>
+    <content type="html"><![CDATA[<p>Ever wondered why performance of MySQL on OS X was so much worse than a Linux or windows counterpart - especially when doing DROP/CREATE statements (ie in the setup of integration tests etc)? It turns out Mac OS has a safer file creation function than is available on other operating systems and the use of that slows down performance of file operations in MySQL.</p>
 
 <p>You can fix this quickly by adding the following to your <strong>my.cnf</strong> file in the<strong> [server]</strong> block. It&#8217;s probably best not to do this in production, but who actually uses OS X as a production web server anyway?</p>
 
@@ -159,10 +172,10 @@ extension=memcache.so
 
 <p>And hey presto, it&#8217;s done.</p>
 
-<p>You could also cheat and just put my <a href="http://www.eagleton.org/files-from-posts/memcache.so">pre-compiled version of memcache.so</a> in your extension folder and go to town.</p>
+<p>You could also cheat and just put my <a href="http://www.eagleton.org/wp-content/uploads/2011/07/memcache.so">pre-compiled version of memcache.so</a> in your extension folder and go to town.</p>
 
 <p><span style="text-decoration: underline;">Update:</span>
-I&#8217;ve also compiled the php 5.3.6 version of the <code>.so</code> file. <a href="http://www.eagleton.org/files-from-posts/memcache-php5.3.6.so">Download it</a>, rename it back to <code>memcache.so</code>, put it in your extension folder and enjoy.</p>
+I&#8217;ve also compiled the php 5.3.6 version of the <code>.so</code> file. <a href="http://www.eagleton.org/wp-content/uploads/2011/07/memcache-php5.3.6.so">Download it</a>, rename it back to <code>memcache.so</code>, put it in your extension folder and enjoy.</p>
 ]]></content>
   </entry>
   
@@ -174,10 +187,7 @@ I&#8217;ve also compiled the php 5.3.6 version of the <code>.so</code> file. <a 
     <content type="html"><![CDATA[<p>Ages ago, I wrote a simple class to enable some scripts to update our wiki. A friend asked for a copy, so here it is:<!--more--></p>
 
 <div><script src='https://gist.github.com/1598093.js?file='></script>
-<noscript><pre><code>&lt;?php
-$wiki = new wiki('http://mywikiurl.com/api.php');
-$wiki-&gt;edit('pageName', 'contents');
-?&gt;</code></pre></noscript></div>
+<noscript><pre><code></code></pre></noscript></div>
 
 
 

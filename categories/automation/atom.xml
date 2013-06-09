@@ -4,7 +4,7 @@
   <title><![CDATA[Category: automation | Lucas' Thoughts]]></title>
   <link href="http://www.eagleton.org/categories/automation/atom.xml" rel="self"/>
   <link href="http://www.eagleton.org/"/>
-  <updated>2012-12-17T16:54:33+11:00</updated>
+  <updated>2013-06-09T13:13:17+10:00</updated>
   <id>http://www.eagleton.org/</id>
   <author>
     <name><![CDATA[MuzzleFork]]></name>
@@ -20,10 +20,7 @@
     <id>http://www.eagleton.org/2010/06/wiki-class</id>
     <content type="html"><![CDATA[<p>Ages ago, I wrote a simple class to enable some scripts to update our wiki. A friend asked for a copy, so here it is:<!--more-->
 <div><script src='https://gist.github.com/1598093.js?file='></script>
-<noscript><pre><code>&lt;?php
-$wiki = new wiki('http://mywikiurl.com/api.php');
-$wiki-&gt;edit('pageName', 'contents');
-?&gt;</code></pre></noscript></div>
+<noscript><pre><code></code></pre></noscript></div>
 </p>
 ]]></content>
   </entry>

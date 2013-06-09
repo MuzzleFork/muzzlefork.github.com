@@ -4,7 +4,7 @@
   <title><![CDATA[Category: octopress | Lucas' Thoughts]]></title>
   <link href="http://www.eagleton.org/categories/octopress/atom.xml" rel="self"/>
   <link href="http://www.eagleton.org/"/>
-  <updated>2012-12-17T16:54:33+11:00</updated>
+  <updated>2013-06-09T13:13:17+10:00</updated>
   <id>http://www.eagleton.org/</id>
   <author>
     <name><![CDATA[MuzzleFork]]></name>
@@ -12,6 +12,19 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Renewed interest]]></title>
+    <link href="http://www.eagleton.org/2013/06/renewed-interest/"/>
+    <updated>2013-06-09T11:52:00+10:00</updated>
+    <id>http://www.eagleton.org/2013/06/renewed-interest</id>
+    <content type="html"><![CDATA[<p>Well, it looks like the <a href="/2012/11/another-new-blogging-engine/">pledge</a> I made when I replaced WordPress with Octopress for my blog didn't last too long - i.e. I didn't even get one article out after making that pledge. That's pretty poor.<!-- More --></p>
+
+<p>Over the last few weekends, I've caught up with an <a href="https://twitter.com/sammyjarrett">old buddy</a> to get our nerd on and work on some nerdy things. This weekend, we looked at Octopress (in the interest of setting it up for him) and it got me interested in posting more. So, here's a new theme (so it's not stock-standard Octopress flavour) and hopefully more of a commitment to getting some content out there..</p>
+
+<p>I've recently completed Certified Scrum Master training and have deployed some websites to a new hosting setup with <a href="https://www.digitalocean.com/?refcode=1d72a90eb581">Digital Ocean</a> (NB: Referral code embedded in that link) which I've found to be a fast, cheap and easy way to manage a host for the nerdier amongst us. Expect some posts in the coming weeks covering some of those topics.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Another new blogging engine]]></title>
