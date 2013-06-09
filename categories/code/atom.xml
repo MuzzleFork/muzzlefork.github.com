@@ -4,7 +4,7 @@
   <title><![CDATA[Category: code | Lucas' Thoughts]]></title>
   <link href="http://www.eagleton.org/categories/code/atom.xml" rel="self"/>
   <link href="http://www.eagleton.org/"/>
-  <updated>2013-06-09T13:13:17+10:00</updated>
+  <updated>2013-06-09T22:29:37+10:00</updated>
   <id>http://www.eagleton.org/</id>
   <author>
     <name><![CDATA[MuzzleFork]]></name>
@@ -12,6 +12,158 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Using git's post-receive hooks to deploy code]]></title>
+    <link href="http://www.eagleton.org/2013/06/using-gits-post-receive-hooks-to-deploy-code/"/>
+    <updated>2013-06-09T13:24:00+10:00</updated>
+    <id>http://www.eagleton.org/2013/06/using-gits-post-receive-hooks-to-deploy-code</id>
+    <content type="html"><![CDATA[<p>I've recently started self-hosting some sites on some cheap, cool hosting provided by <a href="https://www.digitalocean.com/?refcode=1d72a90eb581">Digital Ocean</a>. On one of their VPSs, I've set up some bare git repositories and made some git hooks to automate deployment of sites to that server.<!-- more --></p>
+
+<p>This information isn't limited to only working on Digital Ocean, but my walk-through is based on that environment - using their LAMP stack image based on Ubuntu 12.04 using an SSH key (makes life so much easier :))</p>
+
+<p>This setup uses Apache and some virtual hosts to handle each site. The default setup in Ubuntu for apache involves 2 folders - <code>/etc/apache2/sites-available</code> (where you can put a virtual host directive) and <code>/etc/apache2/sites-enabled</code> (where you symlink files from the sites-available folder in order to enable them). Using the <code>sites-available</code>/<code>sites-enabled</code> combo allows you to disable sites without removing them. This functionality isn't required here since we're going to use git to version control and getting old versions out of config is easy.</p>
+
+<h2>Set up git repository for the virtual hosts</h2>
+
+<p>I'm using <code>/var/repos</code> for all of my repos. You're welcome to use any other path you see fit.
+<code>bash
+mkdir -p /var/repos/virtualhosts.git
+cd /var/repos/virtualhosts.git
+git init --bare
+</code></p>
+
+<p>This creates a bare repository (doesn't include a working folder) ready for use.</p>
+
+<p>While you're in there, modify the post-receive hook (my favourite editor is vim = <code>vim hooks/post-receive</code>)
+Put the following code in there
+``` bash
+GIT_WORK_TREE=/etc/apache2/sites-available git checkout -f</p>
+
+<h1>a2dissite all files in /etc/apache2/sites-enabled</h1>
+
+<p>cd /etc/apache2/sites-enabled
+for f in * ; do a2dissite $f; done</p>
+
+<h1>ensite the ones that are present now in /etc/apache2/sites-available</h1>
+
+<p>cd /etc/apache2/sites-available
+for f in * ; do a2ensite $f; done</p>
+
+<p>service apache2 reload
+<code>
+Then you'll have to give it execute permission
+</code> bash
+chmod +x hooks/post-receive
+```</p>
+
+<p>This will:</p>
+
+<ol>
+<li>Check out the files in the repo to <code>/etc/apache2/sites-available</code></li>
+<li>Disable all the existing sites that are linked</li>
+<li>Enable all the sites that are present in <code>/etc/apache2/sites-available</code>.</li>
+<li>Tell Apache to reload its configuration</li>
+</ol>
+
+
+<p>Now, on your development machine, you'll need to set this up as a remote and start pushing virtual host configurations to it.
+<code>bash
+git clone ssh://user@host-name/var/repos/virtualhosts.git
+</code></p>
+
+<p>You're now ready to start adding virtual host directives into that repo. When you push to <code>origin</code>, it'll restart Apache with the updated config.</p>
+
+<p>Here's a sample - this is modified from the default:
+``` apacheconf
+<VirtualHost *:80></p>
+
+<pre><code>ServerAdmin you@host.com
+
+DocumentRoot /var/sites/&lt;some-domain-name&gt;
+ServerName &lt;some-domain-name&gt;
+ServerAlias www.&lt;some-domain-name&gt;
+
+SetEnv db.name xxxxx
+SetEnv db.user xxxxx
+SetEnv db.password xxxxx
+SetEnv db.host localhost
+
+&lt;Directory /&gt;
+    Options FollowSymLinks
+    AllowOverride None
+&lt;/Directory&gt;
+&lt;Directory /var/&gt;
+    Options Indexes FollowSymLinks MultiViews
+    AllowOverride All
+    Order allow,deny
+    allow from all
+&lt;/Directory&gt;
+
+ScriptAlias /cgi-bin/ /usr/lib/cgi-bin/
+&lt;Directory "/usr/lib/cgi-bin"&gt;
+    AllowOverride None
+    Options +ExecCGI -MultiViews +SymLinksIfOwnerMatch
+    Order allow,deny
+    Allow from all
+&lt;/Directory&gt;
+
+ErrorLog ${APACHE_LOG_DIR}/error.log
+
+# Possible values include: debug, info, notice, warn, error, crit,
+# alert, emerg.
+LogLevel warn
+
+CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+Alias /doc/ "/usr/share/doc/"
+&lt;Directory "/usr/share/doc/"&gt;
+    Options Indexes MultiViews FollowSymLinks
+    AllowOverride None
+    Order deny,allow
+    Deny from all
+    Allow from 127.0.0.0/255.0.0.0 ::1/128
+&lt;/Directory&gt;
+</code></pre>
+
+<p></VirtualHost>
+```</p>
+
+<h2>Set up git repo for each site</h2>
+
+<p>So, we can see that virtual hosts are added to Apache whenever you add a new config, but those virtual host configurations are pointing to locations that don't yet exist. Let's fix that now, back to your remote server.</p>
+
+<p><code>bash
+mkdir -p /var/sites/&lt;some-domain-name&gt;
+mkdir -p /var/repos/&lt;some-domain-name&gt;.git
+cd /var/repos/&lt;some-domain-name&gt;.git
+git init --bare
+</code></p>
+
+<p>And to have this git repo deploy whenever it is pushed to, <code>vim hooks/post-deploy</code>
+``` bash</p>
+
+<h1>!/bin/sh</h1>
+
+<p>GIT_WORK_TREE=/var/sites/<some-domain-name> git checkout -f master
+<code>
+Don't forget to make it executable:
+</code> bash
+chmod +x hooks/post-deploy
+```</p>
+
+<p>It's ready to go! To check it out locally, you can:
+<code>bash
+git clone ssh://user@host-name/var/repos/&lt;some-domain-name&gt;.git
+</code>
+or you could add it as a remote for an existing repository
+<code>bash
+git remote add &lt;repo-name&gt; ssh://user@host-name/var/repos/&lt;some-domain-name&gt;.git
+</code></p>
+
+<p>Push to that remote whenever you're ready for your changes to go live.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Stop working on shit code]]></title>

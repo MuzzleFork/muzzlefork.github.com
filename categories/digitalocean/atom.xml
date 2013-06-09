@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: automation | Lucas' Thoughts]]></title>
-  <link href="http://www.eagleton.org/categories/automation/atom.xml" rel="self"/>
+  <title><![CDATA[Category: digitalocean | Lucas' Thoughts]]></title>
+  <link href="http://www.eagleton.org/categories/digitalocean/atom.xml" rel="self"/>
   <link href="http://www.eagleton.org/"/>
   <updated>2013-06-09T22:29:37+10:00</updated>
   <id>http://www.eagleton.org/</id>
@@ -162,18 +162,6 @@ git remote add &lt;repo-name&gt; ssh://user@host-name/var/repos/&lt;some-domain-
 </code></p>
 
 <p>Push to that remote whenever you're ready for your changes to go live.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Wiki Class]]></title>
-    <link href="http://www.eagleton.org/2010/06/wiki-class/"/>
-    <updated>2010-06-08T21:44:00+10:00</updated>
-    <id>http://www.eagleton.org/2010/06/wiki-class</id>
-    <content type="html"><![CDATA[<p>Ages ago, I wrote a simple class to enable some scripts to update our wiki. A friend asked for a copy, so here it is:<!--more-->
-<div><script src='https://gist.github.com/1598093.js?file='></script>
-<noscript><pre><code></code></pre></noscript></div>
-</p>
 ]]></content>
   </entry>
   
