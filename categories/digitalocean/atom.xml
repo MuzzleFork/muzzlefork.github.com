@@ -4,7 +4,7 @@
   <title><![CDATA[Category: digitalocean | Lucas' Thoughts]]></title>
   <link href="http://www.eagleton.org/categories/digitalocean/atom.xml" rel="self"/>
   <link href="http://www.eagleton.org/"/>
-  <updated>2013-06-09T22:29:37+10:00</updated>
+  <updated>2013-06-11T13:19:13+10:00</updated>
   <id>http://www.eagleton.org/</id>
   <author>
     <name><![CDATA[MuzzleFork]]></name>
@@ -18,7 +18,7 @@
     <link href="http://www.eagleton.org/2013/06/using-gits-post-receive-hooks-to-deploy-code/"/>
     <updated>2013-06-09T13:24:00+10:00</updated>
     <id>http://www.eagleton.org/2013/06/using-gits-post-receive-hooks-to-deploy-code</id>
-    <content type="html"><![CDATA[<p>I've recently started self-hosting some sites on some cheap, cool hosting provided by <a href="https://www.digitalocean.com/?refcode=1d72a90eb581">Digital Ocean</a>. On one of their VPSs, I've set up some bare git repositories and made some git hooks to automate deployment of sites to that server.<!-- more --></p>
+    <content type="html"><![CDATA[<p>zzzI've recently started self-hosting some sites on some cheap, cool hosting provided by <a href="https://www.digitalocean.com/?refcode=1d72a90eb581">Digital Ocean</a>. On one of their VPSs, I've set up some bare git repositories and made some git hooks to automate deployment of sites to that server.<!-- more --></p>
 
 <p>This information isn't limited to only working on Digital Ocean, but my walk-through is based on that environment - using their LAMP stack image based on Ubuntu 12.04 using an SSH key (makes life so much easier :))</p>
 
