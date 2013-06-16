@@ -4,7 +4,7 @@
   <title><![CDATA[Lucas' Thoughts]]></title>
   <link href="http://www.eagleton.org/atom.xml" rel="self"/>
   <link href="http://www.eagleton.org/"/>
-  <updated>2013-06-11T13:39:07+10:00</updated>
+  <updated>2013-06-16T11:43:11+10:00</updated>
   <id>http://www.eagleton.org/</id>
   <author>
     <name><![CDATA[MuzzleFork]]></name>
@@ -12,6 +12,85 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Using SSH tunnels as a proxy]]></title>
+    <link href="http://www.eagleton.org/2013/06/using-ssh-tunnels-as-a-proxy/"/>
+    <updated>2013-06-16T10:16:00+10:00</updated>
+    <id>http://www.eagleton.org/2013/06/using-ssh-tunnels-as-a-proxy</id>
+    <content type="html"><![CDATA[<p>In my day job, our application is hosted in Amazon&#8217;s AWS service using an autoscaled cluster and their RDS service for MySQL (among many other aspects of their environment). In this configuration the web servers boot up and shut down in order to respond to the current load of our users. This is great and all, but means that their IP addresses are always changing.</p>
+
+<p>Our RDS is configured such that only the machines in our autoscaling group are allowed to access it. This is also great, but it means that if I want to look into something in the production database, I need to SSH to one of the web servers (after working out its IP address) and <em>then</em> connect to RDS.</p>
+
+<p>This can be so much easier.<!-- More --></p>
+
+<p>SSH tunnels sounded like the easy option here, but by default, that lets you access services on a remote machine. In this setup, we want to access services not <em>on</em> a machine, but <em>via</em> that machine. We also don&#8217;t really care to keep that terminal session open.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>ssh -i &lt;keyfile&gt; -o <span class="nv">StrictHostKeyChecking</span><span class="o">=</span>no -f -L &lt;your <span class="nb">local </span>port&gt;:&lt;proxied-to-host&gt;:&lt;proxied-to-port&gt; &lt;proxy-user&gt;@&lt;proxy-host&gt; -N &amp;
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Explanation of each of the parts of that command:</p>
+
+<ul>
+<li><code>-i &lt;keyfile&gt;</code> Include this if your default key isn&#8217;t the one that can access your proxy (&lt;proxy-user&gt;@&lt;proxy-host&gt;).</li>
+<li><code>-o StrictHostKeyChecking=no</code> This is useful when you&#8217;re always connecting to a new host and don&#8217;t want to type yes each time it happens to be a new host.</li>
+<li><code>-f</code> As per the man page, Requests ssh to go to background just before command execution. This is useful if ssh is going to ask for passwords or passphrases, but the user wants it in the background.</li>
+<li><code>-L</code> This is what sets up the proxy instead of just getting you to the remote host.</li>
+<li><code>&lt;your local port&gt;</code> As per normal tunnels, you need to specify a local port that you want to access this service on.</li>
+<li><code>&lt;proxied-to-host&gt;</code> This is the host name for the service you want to access via this proxy. In my case, it&#8217;s an RDS host.</li>
+<li><code>&lt;proxied-to-port&gt;</code> This is the remote port for the service you want to access via this proxy. In my case, it&#8217;s <code>3306</code>.</li>
+<li><code>&lt;proxy-user&gt;</code> This is the username of the account you can normally SSH to. If you&#8217;re using standard AWS AMIs, this is likely <code>ec2-user</code>.</li>
+<li><code>&lt;proxy-host&gt;</code> This is the hostname of the account you can SSH to.</li>
+<li><code>-N</code> As per the man page, Do not execute a remote command.  This is useful for just forwarding ports.</li>
+</ul>
+
+
+<p>This means that the command for me to access my RDS instance locally becomes something like:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>ssh -i ~/.ssh/ec2-ap-southeast-2.pem -o <span class="nv">StrictHostKeyChecking</span><span class="o">=</span>no -f -L 3000:myhostname-southeast-2.rds.amazonaws.com:3306 ec2-user@ec2-somethingmagic.ap-southeast-2.compute.amazonaws.com -N &amp;
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>After running this, I can connect to port 3000 on my local machine which will be routed via my EC2 instance and straight to the RDS instance I have configured, allowing me to use local tools like phpMyAdmin or Sequel Pro etc in order to access the database instead of having to do it all through the shell. (I don&#8217;t hate the shell, it can just be easier some times to have a GUI for interacting with the DB).</p>
+
+<p>One thing the above doesn&#8217;t solve however is how to get the host name when the host names keep changing due to autoscaling.</p>
+
+<p>Assuming you have the AWS utilities installed, you can do something like the following:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">export </span><span class="nv">AWS_ACCESS_KEY</span><span class="o">=</span><span class="s2">&quot;xxxxxxxxx&quot;</span>
+</span><span class='line'><span class="nb">export </span><span class="nv">AWS_SECRET_KEY</span><span class="o">=</span><span class="s2">&quot;yyyyyyyyyyyy&quot;</span>
+</span><span class='line'><span class="nb">export </span><span class="nv">EC2_HOME</span><span class="o">=</span><span class="s2">&quot;/usr/local/share/aws/ec2-api-tools&quot;</span>
+</span><span class='line'><span class="nb">export </span><span class="nv">JAVA_HOME</span><span class="o">=</span>/usr
+</span><span class='line'>/usr/local/share/aws/ec2-api-tools/bin/ec2-describe-instances --region ap-southeast-2 --show-empty-fields -H --filter <span class="s2">&quot;tag:Name=&lt;whatever you&#39;ve named your cluster&gt;&quot;</span> --hide-tags |grep INSTANCE | awk <span class="s1">&#39;{print $4}&#39;</span> |head -n 1
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This will give you the first node in your autoscaling cluster.</p>
+
+<p>I&#8217;ve combined this into a neat little script for my use which will go discover a valid, current node then establish the tunnel.</p>
+
+<p>The MySQL client is also so good that if the tunnel drops out (eg autoscaling shuts down that node), all you have to do it reestablish the tunnel with another node and you can continue using it.</p>
+
+<p>If you&#8217;re using autoscaling and will need to periodically reestablish these tunnels, try adding something like the following to the start of your script:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">kill</span> <span class="sb">`</span>lsof -t -i tcp:3000<span class="sb">`</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This kills whatever is running on that port - most likely your dead tunnel.</p>
+
+<p>Good luck, let me know in the comments if it worked for you.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Using git's post-receive hooks to deploy code]]></title>

@@ -61,6 +61,49 @@
     <article class="post">
 	<h2 class="title">
 		
+		<a href="/2013/06/using-ssh-tunnels-as-a-proxy/">
+		
+			Using SSH Tunnels as a Proxy</a>
+	</h2>
+	<div class="entry-content">
+		<p>In my day job, our application is hosted in Amazon&#8217;s AWS service using an autoscaled cluster and their RDS service for MySQL (among many other aspects of their environment). In this configuration the web servers boot up and shut down in order to respond to the current load of our users. This is great and all, but means that their IP addresses are always changing.</p>
+
+<p>Our RDS is configured such that only the machines in our autoscaling group are allowed to access it. This is also great, but it means that if I want to look into something in the production database, I need to SSH to one of the web servers (after working out its IP address) and <em>then</em> connect to RDS.</p>
+
+<p>This can be so much easier.
+		
+		<a href="/2013/06/using-ssh-tunnels-as-a-proxy/" class="more-link">Read on &rarr;</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-06-16T10:16:00+10:00" pubdate data-updated="true">2013-06-16</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/categories/aws/'>aws</a>, <a class='category' href='/categories/mysql/'>mysql</a>, <a class='category' href='/categories/ssh/'>ssh</a>, <a class='category' href='/categories/tunnel/'>tunnel</a>
+
+
+</div>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
 		<a href="/2013/06/using-gits-post-receive-hooks-to-deploy-code/">
 		
 			Using Git&#8217;s Post-receive Hooks to Deploy Code</a>
