@@ -15,7 +15,7 @@ This blog tends to get updated... sporadically. I get the energy to post more of
 * Octopress and Jekyll are in ruby, ST2 plugins are in python and the existing templates use LESS. A nice change to my day-to-day life as a PHP developer to hack around in some new technologies.
 * Performance of effectively static media via GitHub pages is much better than loading pages through wordpress' database driven structure. See if you can tell when I changed the hosting arrangement in the graph below.
 
-{% img [class names] /images/wordpress-octopress-performance.png 678 454 Page load performance improvement - guess when I changed the hosting arrangement %}
+{% img /images/wordpress-octopress-performance.png 678 454 Page load performance improvement - guess when I changed the hosting arrangement %}
 
 
 ## Detractors
